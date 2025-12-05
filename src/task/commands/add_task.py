@@ -3,7 +3,6 @@ from task.commands import util
 
 def run(args):
     data = db.read_db("db.json")
-    print(data)
     task_id = db.next_id(data)
     data[task_id] = task.new_task(args.description)
     db.write_db(data, "db.json")
