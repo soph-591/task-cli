@@ -1,13 +1,14 @@
+from task import db, task
 from task.commands import util
 
 def run(args):
-    # logic goes here
-    description = args.description
-    pass
+    data = db.read_db("db.json")
+    print(data)
+    task_id = db.next_id(data)
+    data[task_id] = task.new_task(args.description)
+    db.write_db(data, "db.json")
 
 def register(subparsers):
-    # Add a new task
-    # task-cli add "Go shopping"
     parser = subparsers.add_parser(
         "add", help='Add a new task. The task will be added with "todo" status'
     )
