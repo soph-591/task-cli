@@ -9,7 +9,6 @@ def run(args):
     if args.status:
         [print_nicely(k, v) for k, v in data.items() if v["status"] == args.status]
     else:
-        print(f"args status is {args.status}")
         [print_nicely(k, v) for k, v in data.items()]
 
 def register(subparsers):
