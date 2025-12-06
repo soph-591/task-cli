@@ -20,9 +20,3 @@ def register(subparsers):
         choices=["in-progress", "todo", "done"],
         help="Filter tasks by status",
     )
-    ## this is broken
-    parser.add_argument(
-        "--status", "-s", dest="status", help="Filter tasks by status",
-        choices=["in-progress", "todo", "done"]
-    )
-    parser.set_defaults(func=run)
