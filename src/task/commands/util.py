@@ -1,7 +1,4 @@
 def add_taskid_args(subparser, typeof="update"):
-    """
-    TODO: How do I make these mutually exclusive?
-    """
     subparser.add_argument(
         "task_id",
         nargs="?",
@@ -14,9 +11,6 @@ def add_taskid_args(subparser, typeof="update"):
     )
 
 def add_description_args(subparser):
-    """
-    TODO: How do I make these mutually exclusive?
-    """
     subparser.add_argument(
         "description",
         nargs="?",
